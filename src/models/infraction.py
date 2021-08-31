@@ -66,10 +66,10 @@ class Infraction:
     async def find_member_infractions(
         cls,
         pool: Pool,
-        member: Member,
+        member: int,
     ) -> List["Infraction"]:
         infractions = await pool.fetch(
-            "SELECT * FROM Infractions WHERE member_id = $1;", member.id
+            "SELECT * FROM Infractions WHERE member_id = $1;", member
         )
 
         return [cls(pool, **infraction) for infraction in infractions]

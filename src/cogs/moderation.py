@@ -19,7 +19,7 @@ class Moderation(Cog):
             await ctx.send(":x: You must provide a reason for moderation actions.")
             return False
 
-        if STAFF in ctx.author._roles:  # type: ignore
+        if STAFF in member._roles:
             await ctx.reply("You cannot infract staff members.")
             return False
 

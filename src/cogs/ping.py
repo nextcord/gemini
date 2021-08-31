@@ -33,7 +33,7 @@ class Ping(Cog):
         delete = await self.timed(msg.delete())
 
         results = Embed(
-            colour=0x87ceeb,
+            colour=0x87CEEB,
             title="Gemini Ping",
             description=(
                 f"🌐 WebSocket latency: {self.bot.latency * 1000:.2f}ms\n"

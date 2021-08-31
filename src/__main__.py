@@ -15,6 +15,7 @@ def main() -> None:
     bot = Bot()
     bot.load_extensions(
         "ping",
+        "moderation",
     )
 
     logger.info("Starting bot...")

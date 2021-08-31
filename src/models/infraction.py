@@ -96,6 +96,7 @@ class Infraction:
 
         return cls(pool, **infraction)
 
+    @property
     def embed(self) -> Embed:
         colour = {
             0: 0x34cfeb,
@@ -119,3 +120,7 @@ class Infraction:
         )
 
         return embed
+
+    @property
+    def short(self) -> str:
+        return f"`{self.id}` `{TYPES.get(self.infr_type)}` {self.reason[:100]}"

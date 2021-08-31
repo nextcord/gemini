@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  bot:
+    build: .
+    restart: always
+    depends_on: ["database"]
+    links: ["database"]
+    environment:
+      USING_DOCKER: "true"
+      DATABASE_ADDR: postgres://root:password@database:5432/gemini
+    env_file: .env
+  database:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: root
+      POSTGRES_DB: gemini
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data

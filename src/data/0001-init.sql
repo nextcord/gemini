@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS Infractions (
     staff_name          VARCHAR(255) NOT NULL,
     infr_type           INT NOT NULL,
     reason              TEXT NOT NULL,
+    created             TIMESTAMP NOT NULL,
     expires             TIMESTAMP,
     expired             BOOLEAN NOT NULL DEFAULT FALSE
 );

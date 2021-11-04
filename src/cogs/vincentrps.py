@@ -165,7 +165,7 @@ class vincentrps(commands.Cog):
 
     @commands.command(name="help")
     async def help(self, message):
-        await message.channel.send("Vincent's Cog Has been loaded!")
+        await message.channel.send("**Coming Soon**")
 
     @commands.command(name="tag")
     async def tag(self, message):
@@ -179,7 +179,7 @@ class vincentrps(commands.Cog):
     async def on_message(self, message):
         """Listens For A Message In The Available Help Channels Category"""
         pass
-    
+
     @commands.command(name="close")
     async def close(self, message):
         """Closes A Thread"""

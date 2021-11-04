@@ -4,7 +4,7 @@ from typing import Coroutine
 from nextcord import Embed
 from nextcord.ext.commands import Cog, Context, command
 
-from src import Bot
+from bot import Bot
 
 
 class Ping(Cog):

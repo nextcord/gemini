@@ -1,10 +1,10 @@
 from os import getenv
-
+import os
 from dotenv import load_dotenv
 from loguru import logger
 
-from . import Bot
-
+from bot import Bot
+TOKEN = os.getenv("BOT_TOKEN")
 
 def main() -> None:
     """Run the bot."""
@@ -16,10 +16,11 @@ def main() -> None:
     bot.load_extensions(
         "ping",
         "moderation",
+        "vincentrps",
     )
 
     logger.info("Starting bot...")
-    bot.run(getenv("BOT_TOKEN"))
+    bot.run(TOKEN)
 
 
 if __name__ == "__main__":

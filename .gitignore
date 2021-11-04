@@ -5,7 +5,9 @@ __pycache__/
 
 # C extensions
 *.so
-
+# For testing new versions of packages
+nextcord/
+lavalink/
 # Distribution / packaging
 .Python
 build/

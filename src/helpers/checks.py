@@ -1,4 +1,4 @@
-from os import environ
+"""from os import environ
 
 from nextcord.ext.commands import Context, check
 
@@ -11,4 +11,4 @@ def is_staff():
         if not ctx.guild: return False
 
         return STAFF in ctx.author._roles  # type: ignore
-    return check(predicate)
+    return check(predicate)"""

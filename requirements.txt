@@ -1,0 +1,9 @@
+python==^3.8
+nextcord==2.0.0-alpha.1
+taskipy==1.8.1
+loguru==0.5.3
+python-dotenv==0.19.0
+asyncpg==0.24.0
+black==21.8b0
+isort==5.9.3
+lavalink==3.1.4

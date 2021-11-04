@@ -1,13 +1,14 @@
 from os import getenv
 from traceback import format_exc
 from typing import Optional
-
 from asyncpg import Pool, create_pool
 from loguru import logger
 from nextcord import Intents
+from nextcord.client import Client
 from nextcord.ext.commands import Bot as _BotBase
 from nextcord.ext.commands import Context
-
+from database import connection
+from database.connection import client, mod, db
 
 class Bot(_BotBase):
     """A subclass of nextcord.ext.commands.Bot"""
@@ -30,7 +31,7 @@ class Bot(_BotBase):
         failed = 0
 
         for ext in exts:
-            ext = f"src.cogs.{ext}"
+            ext = f"cogs.{ext}"
 
             try:
                 self.load_extension(ext)
@@ -44,12 +45,15 @@ class Bot(_BotBase):
         logger.info(
             f"Extension loading has been completed. ({len(exts)} total, {failed} failed)"
         )
+    post = {"user": "Mike",
+        "text": "My first blog post!",
+        "tags": ["mongodb", "python", "pymongo"] }
 
-    async def _db_init(self) -> None:
+    """async def _db_init(self) -> None:
         logger.info("Connecting to Postgres...")
         self.db = await create_pool(dsn=getenv("DATABASE_ADDR"))  # type: ignore
 
-        with open("./src/data/0001-init.sql") as f:  # TODO: Improve database
+        with open("./data/0001-init.sql") as f:  # TODO: Improve database
             await self.db.execute(f.read())  # type: ignore
 
         logger.info("Database connected.")
@@ -57,4 +61,4 @@ class Bot(_BotBase):
     async def start(self, *args, **kwargs) -> None:
         await self._db_init()
 
-        await super().start(*args, **kwargs)
+        await super().start(*args, **kwargs)"""

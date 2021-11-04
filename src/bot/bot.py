@@ -47,12 +47,6 @@ class Bot(_BotBase):
             f"Extension loading has been completed. ({len(exts)} total, {failed} failed)"
         )
 
-    post = {
-        "user": "Mike",
-        "text": "My first blog post!",
-        "tags": ["mongodb", "python", "pymongo"],
-    }
-
     """async def _db_init(self) -> None:
         logger.info("Connecting to Postgres...")
         self.db = await create_pool(dsn=getenv("DATABASE_ADDR"))  # type: ignore

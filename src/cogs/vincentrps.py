@@ -7,6 +7,7 @@ from models.sphinxreader import SphinxObjectFileReader
 from models import fuzzy
 from typing import Dict, NamedTuple, Optional
 from nextcord.ext import commands
+from models.backupnames import backup
 from nextcord import (
     Button,
     ButtonStyle,
@@ -22,15 +23,12 @@ from nextcord import (
     ui,
 )
 
-
-
 class vincentrps(commands.Cog):
     """A cog for any features i decide to add"""
 
     """Credits:
     Robodanny 
     Previous
-    
     """
 
     def __init__(self, bot: Bot) -> None:
@@ -173,6 +171,19 @@ class vincentrps(commands.Cog):
     async def tag(self, message):
         await message.channel.send("||Coming Soon||")
 
+    @commands.command()
+    async def temp(self, message):
+        pass
+    
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        """Listens For A Message In The Available Help Channels Category"""
+        pass
+    
+    @commands.command(name="close")
+    async def close(self, message):
+        """Closes A Thread"""
+        pass
 
 def setup(bot: Bot) -> None:
     """Setting Up My Cog"""

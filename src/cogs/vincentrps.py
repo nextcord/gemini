@@ -22,10 +22,6 @@ from nextcord import (
     ui,
 )
 
-HELP_CHANNEL_ID: int = 881965127031722004
-HELP_LOGS_CHANNEL_ID: int = 883035085434142781
-HELPER_ROLE_ID: int = 882192899519954944
-CUSTOM_ID_PREFIX: str = "help:"
 
 
 class vincentrps(commands.Cog):
@@ -177,24 +173,6 @@ class vincentrps(commands.Cog):
     async def tag(self, message):
         await message.channel.send("||Coming Soon||")
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-        if (
-            message.channel.id == HELP_CHANNEL_ID
-            and message.type is MessageType.thread_created
-        ):
-            await message.delete(delay=5)
-        if (
-            isinstance(message.channel, Thread)
-            and message.channel.parent_id == HELP_CHANNEL_ID
-            and message.type is MessageType.pins_add
-        ):
-            await message.delete(delay=10)
-
-        FakeContext = NamedTuple(
-            "FakeContext", [("channel", Thread), ("author", Member), ("guild", Guild)]
-        )
-        
 
 def setup(bot: Bot) -> None:
     """Setting Up My Cog"""

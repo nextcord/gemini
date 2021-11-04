@@ -4,7 +4,9 @@ from dotenv import load_dotenv
 from loguru import logger
 
 from bot import Bot
+
 TOKEN = os.getenv("BOT_TOKEN")
+
 
 def main() -> None:
     """Run the bot."""
@@ -20,6 +22,7 @@ def main() -> None:
     )
 
     logger.info("Starting bot...")
+
     bot.run(TOKEN)
 
 

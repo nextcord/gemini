@@ -1,6 +1,7 @@
 import io
 import zlib
 
+
 class SphinxObjectFileReader:
     # Inspired by Sphinx's InventoryFileReader
     BUFSIZE = 16 * 1024
@@ -9,7 +10,7 @@ class SphinxObjectFileReader:
         self.stream = io.BytesIO(buffer)
 
     def readline(self):
-        return self.stream.readline().decode('utf-8')
+        return self.stream.readline().decode("utf-8")
 
     def skipline(self):
         self.stream.readline()
@@ -24,11 +25,11 @@ class SphinxObjectFileReader:
         yield decompressor.flush()
 
     def read_compressed_lines(self):
-        buf = b''
+        buf = b""
         for chunk in self.read_compressed_chunks():
             buf += chunk
-            pos = buf.find(b'\n')
+            pos = buf.find(b"\n")
             while pos != -1:
-                yield buf[:pos].decode('utf-8')
-                buf = buf[pos + 1:]
-                pos = buf.find(b'\n')
+                yield buf[:pos].decode("utf-8")
+                buf = buf[pos + 1 :]
+                pos = buf.find(b"\n")

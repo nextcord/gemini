@@ -10,6 +10,7 @@ from nextcord.ext.commands import Context
 from database import connection
 from database.connection import client, mod, db
 
+
 class Bot(_BotBase):
     """A subclass of nextcord.ext.commands.Bot"""
 
@@ -45,9 +46,12 @@ class Bot(_BotBase):
         logger.info(
             f"Extension loading has been completed. ({len(exts)} total, {failed} failed)"
         )
-    post = {"user": "Mike",
+
+    post = {
+        "user": "Mike",
         "text": "My first blog post!",
-        "tags": ["mongodb", "python", "pymongo"] }
+        "tags": ["mongodb", "python", "pymongo"],
+    }
 
     """async def _db_init(self) -> None:
         logger.info("Connecting to Postgres...")

@@ -99,12 +99,12 @@ class Infraction:
     @property
     def embed(self) -> Embed:
         colour = {
-            0: 0x34cfeb,
-            1: 0xc0eb34,
-            2: 0xebb434,
-            3: 0xeb8334,
-            4: 0xff0000,
-        }.get(self.infr_type, 0x34cfeb)
+            0: 0x34CFEB,
+            1: 0xC0EB34,
+            2: 0xEBB434,
+            3: 0xEB8334,
+            4: 0xFF0000,
+        }.get(self.infr_type, 0x34CFEB)
 
         embed = Embed(
             colour=colour,
@@ -116,7 +116,7 @@ class Infraction:
                 f"Type: {TYPES.get(self.infr_type)}\n"
                 f"Reason: {self.reason}\n\n"
                 f"Expired: {['No', 'Yes'][bool(self.expired)]}"
-            )
+            ),
         )
 
         return embed
